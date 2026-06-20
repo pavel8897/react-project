@@ -1,0 +1,41 @@
+header {
+    background: grey;
+    height: 90px;
+    display: flex;
+    align-items: center;
+}
+
+.header-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.header-logo {
+    width: 50px;
+}
+
+.header-nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;    
+}
+
+.header-nav a {
+    text-decoration: none;
+}
+
+.header-nav a.active {
+    color: red;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    color: blueviolet;
+    margin: 0;
+}
