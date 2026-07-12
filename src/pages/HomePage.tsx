@@ -1,7 +1,21 @@
-import {products} from '../data/products';
+// import {products} from '../data/products';
 import styles from '../styles/Home.module.css';
 
+import { useQuery } from '@tanstack/react-query';
+import { fetchProducts } from '../api/products';
+import { useCartStore } from '../store/useCartStore';
+
 function HomePage() {
+    const addItem = useCartStore((state) => state.addItem);
+    
+    const { data: products, isLoading, error } = useQuery({
+        queryKey: ['products'],
+        queryFn: fetchProducts,
+    });
+
+    if (isLoading) return <div>Загрузка товаров...</div>;
+    if (error) return <div>Ошибка: {error.message}</div>;
+
     return (
         <div>
             <h1>Каталог товаров</h1>
